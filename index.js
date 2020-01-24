@@ -6,6 +6,8 @@ var fs = require("fs");
 const sep = path.sep;
 const root = "." + sep + "responses" + sep;
 
+var port = process.env.PORT || 3000;
+
 http
   .createServer(function(req, res) {
     try {
@@ -13,6 +15,8 @@ http
 
       if (q.gethx != undefined) {
         sendFile(res, "gethx.xml");
+      } else if (q.pm == undefined){
+        sendError(res);
       } else if (q.pmd != undefined) {
         var pmd = q.pmd.replace("/[^a-z0-9+]+/gi", "");
         var pm = q.pm.replace("/[^a-z0-9+]+/gi", "");
@@ -26,8 +30,7 @@ http
             }
           } catch (error) {
             console.log(error);
-            res.writeHead(404);
-            res.end('404');
+            sendError(res);
         }
         });
       } else {
@@ -37,8 +40,7 @@ http
       console.log("served: " + q.pm + ", " + q.pmd);
     } catch (error) {
       console.log(error);
-      res.writeHead(404);
-      res.end('404');
+      sendError(res);
     }
 
     /*
@@ -68,8 +70,8 @@ http
     res.end('Hello World')
   }      */
   })
-  .listen(8080);
-console.log("running...");
+  .listen(port);
+console.log("running on port " + port);
 
 function sendFile(res, filename) {
   fs.readFile(root + filename, function(err, data) {
@@ -85,8 +87,11 @@ function sendFile(res, filename) {
       }
     } catch (error) {
       console.log(error);
-      res.writeHead(404);
-      res.end('404');
+      sendError(res);
     }
   });
+}
+
+function sendError(res){
+  sendFile(res, 'error.xml');
 }
