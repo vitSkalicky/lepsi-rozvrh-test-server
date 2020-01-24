@@ -57,7 +57,7 @@
       <pocet>5</pocet>
       <den>
         <zkratka>Po</zkratka>
-        <datum>20171204</datum>
+        <datum>20200210</datum>
         <hodiny>
           <hod>
             <idcode>20171204 31GOX86U000L</idcode>
@@ -195,7 +195,7 @@
       </den>
       <den>
         <zkratka>Út</zkratka>
-        <datum>20171205</datum>
+        <datum>20200211</datum>
         <hodiny>
           <hod>
             <chng></chng>
@@ -351,7 +351,7 @@
       </den>
       <den>
         <zkratka>St</zkratka>
-        <datum>20171206</datum>
+        <datum>20200212</datum>
         <hodiny>
           <hod>
             <idcode>20171206 31GOE10U000C</idcode>
@@ -489,7 +489,7 @@
       </den>
       <den>
         <zkratka>Čt</zkratka>
-        <datum>20171207</datum>
+        <datum>20200213</datum>
         <hodiny>
           <hod>
             <idcode>20171207 31GOE 2U001W</idcode>
@@ -627,7 +627,7 @@
       </den>
       <den>
         <zkratka>Pá</zkratka>
-        <datum>20171208</datum>
+        <datum>20200214</datum>
         <hodiny>
           <hod>
             <idcode>20171208 31GOE8FU000Q</idcode>
